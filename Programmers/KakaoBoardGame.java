@@ -4,6 +4,7 @@ package Programmers;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 
 public class KakaoBoardGame {
@@ -33,14 +34,9 @@ public class KakaoBoardGame {
                     gameBoard.add(new Stack<Integer>());
                 }
                
-                String a="AAA";
-                a.length();
-                StringBuffer b = new StringBuffer();
-                b.append("*");
-                // b =  "*" * length() + answer.substring(length-4);
-                // b.to
+        
                 
-
+                gameBoard.re
                 Stack<Integer> resultBin = new Stack<Integer>();
                 // [1,5,3,5,1,2,1,4]	
                 
@@ -51,8 +47,8 @@ public class KakaoBoardGame {
                         }
                        
                     }
-                }
-
+            
+                    Collectors.toList()
 
                 for(int k =0 ; k<moves.length ; k++){
                     int index = moves[k]-1;
