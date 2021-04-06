@@ -43,26 +43,26 @@ public class TriangleSnare {
     }
 
 
-    public static void verticalFill(int columnIdx,int start, int end, int[][] matrixParam, int limit){
-        while(matrixParam[start][columnIdx]!=0){
-            matrixParam[start++][columnIdx] = ++value;
+    public static void verticalFill(int startX, int startY ,int end, int[][] matrixParam, int limit){
+        while(matrixParam[startX][startY]!=0){
+            matrixParam[startX++][startY] = ++value;
             if(value==limit){
                 return;
             }
         }
-        horizontalFill( start , //ok length n-1 
-                      columnIdx+1, end-horizontalCycle++ ,matrixParam,limit);  // row 3 = end -1 = 4-1  //   start 2 
+        horizontalFill( startX , //ok length n-1 
+        startY+1, end-horizontalCycle++ ,matrixParam,limit);  // row 3 = end -1 = 4-1  //   start 2 
        
     }
 
-    public static void horizontalFill(int rowIdx, int startY, int end, int[][] matrixParam, int limit){
-        while(matrixParam[rowIdx][startY++]!=0){
-            matrixParam[rowIdx][startY++] = ++value;
+    public static void horizontalFill(int startX, int startY, int end, int[][] matrixParam, int limit){
+        while(matrixParam[startX][startY++]!=0){
+            matrixParam[startX][startY++] = ++value;
             if(value==limit){
                 return;
             }
         }
-        diagonalFill( rowIdx-1, , matrixParam,limit);
+        diagonalFill( startX-1, , matrixParam,limit);
     }
 
     public static void diagonalFill(int startX, int startY, int end, int[][] matrixParam, int limit){
