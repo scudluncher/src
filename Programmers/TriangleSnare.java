@@ -1,10 +1,10 @@
-package programmers;
+
 
 public class TriangleSnare {
     
     public static void main(String[] args) {
         
-        solution(7);
+        solution(10);
 
     }
     static int value= 0;
@@ -25,7 +25,7 @@ public class TriangleSnare {
        
 
         //vertical -> horizontal -> diagonal -> vertical -> horizontal -> diagonal ...
-        verticalFill(0,0,n,matrix, limit);
+        verticalFill(0,0,matrix, limit);
         int idx = 0;
         for(int i=0;i<matrix.length;i++){
             for(int j=0 ; j< matrix[i].length;j++){
@@ -43,36 +43,35 @@ public class TriangleSnare {
     }
 
 
-    public static void verticalFill(int startX, int startY ,int end, int[][] matrixParam, int limit){
-        while(matrixParam[startX][startY]!=0){
+    public static void verticalFill(int startX, int startY , int[][] matrixParam, int limit){
+        while( startX<matrixParam.length && startY<matrixParam.length && matrixParam[startX][startY]==0 ){
             matrixParam[startX++][startY] = ++value;
             if(value==limit){
                 return;
             }
         }
-        horizontalFill( startX , //ok length n-1 
-        startY+1, end-horizontalCycle++ ,matrixParam,limit);  // row 3 = end -1 = 4-1  //   start 2 
+        horizontalFill( startX-1 , startY ,matrixParam,limit);  // row 3 = end -1 = 4-1  //   start 2 
        
     }
 
-    public static void horizontalFill(int startX, int startY, int end, int[][] matrixParam, int limit){
-        while(matrixParam[startX][startY++]!=0){
-            matrixParam[startX][startY++] = ++value;
+    public static void horizontalFill(int startX, int startY, int[][] matrixParam, int limit){
+        while(startY+1<matrixParam.length &&matrixParam[startX][startY+1]==0 ){
+            matrixParam[startX][1+ startY++] = ++value;
             if(value==limit){
                 return;
             }
         }
-        diagonalFill( startX-1, , matrixParam,limit);
+        diagonalFill( startX-1, startY-1, matrixParam,limit);
     }
 
-    public static void diagonalFill(int startX, int startY, int end, int[][] matrixParam, int limit){
-        while(matrixParam[startX][startY]!=0){
+    public static void diagonalFill(int startX, int startY, int[][] matrixParam, int limit){
+        while(startX<matrixParam.length && startY<matrixParam.length && matrixParam[startX][startY]==0){
             matrixParam[startX--][startY--] = ++value;
             if(value==limit){
                 return;
             }
         }
-        verticalFill(i,i+1,start+1,matrixParam,limit); 
+        verticalFill(startX+2,startY+1,matrixParam,limit); 
 
 
       //종료 체크
