@@ -8,8 +8,7 @@ public class TriangleSnare {
 
     }
     static int value= 0;
-    static int diagonalCycle= 0;
-    static int horizontalCycle = 0;
+
 
     public static int[] solution(int n) {
         int[] answer = {};
