@@ -13,7 +13,7 @@ public class disguiseSpy {
         if(closet.keySet().size()>1){ // 조합을 고려 
             int combination = 1;
             for(String key : closet.keySet()){
-                combination *= closet.get(key)+1;
+                combination *= closet.get(key)+1; // (안경, 모자 , 공집합)
             }
             combination = combination -1; // 아무것도 고르지 않는 경우는 제외한다.
             answer += combination;
