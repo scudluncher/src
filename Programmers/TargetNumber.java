@@ -16,11 +16,12 @@ public class TargetNumber {
     
         
         private static void dfs(int[]numbers, int sum, int target, int index){
-            //종료조건 // dfs 
+            // dfs 재귀방식 호출시 종료조건 필요합니다.
+            // 종료조건 
             if(numbers.length== index){
                 if(sum == target){
                    answer++;
-                   return;
+                   return;  // void 에서도 return 을 할 수 있습니다.
                 }//else return; // this return is key to finish.. ?
             }else{
                 // sum += numbers[index++];
