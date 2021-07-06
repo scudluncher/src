@@ -1,0 +1,4 @@
+many uses
+
+십진수 -> 이진수 String binaryString =  Integer.toBinaryString(int i)
+                 String binaryString = Integer.toString(int i ,2);   
