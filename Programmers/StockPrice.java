@@ -1,5 +1,6 @@
 
-import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class StockPrice {
     public static void main(String[] args) {
@@ -10,23 +11,30 @@ public class StockPrice {
     }
 
     public static int[] solution(int[] prices) {
-        int[] answer = {};
+        int[] answer = new int[prices.length];
         
-
-        Stack<Integer> stackList = new Stack<Integer>();
-        for(int price : prices){
-            
-            stackList.push(price);
+        
+        for(int i =0 ; i <prices.length-1;i++){
+            Queue<Integer> intList = new LinkedList<Integer>();
+            intList.offer(prices[i]);
+            for(int j = i+1 ; j<prices.length; j++){
+                if(intList.peek() <= prices[j]){
+                    intList.offer(prices[j]);
+                }else {
+                    intList.offer(prices[j]);
+                    break;
+                };
+            }
+            answer[i] = intList.size()-1;
+                      
         }
-
-
+        answer[prices.length-1] = 0;
         
-            
        
         
-
         
 
+        
         return answer;
     }
 }
