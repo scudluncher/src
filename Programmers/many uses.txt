@@ -2,3 +2,32 @@ many uses
 
 십진수 -> 이진수 String binaryString =  Integer.toBinaryString(int i)
                  String binaryString = Integer.toString(int i ,2);   
+
+
+
+
+
+String
+대소문자 toLowerCase toUpperCase
+
+.replaceAll("[^._-a-z0-9]+",""); 없애기, 바꾸기   소문자 a~z 까지, . _ - 는 살린다 0~9까지도 살린다.
+
+
+
+
+
+DFS : Stack 
+1.
+start point : stack 에 넣고
+child node 가 있으면 (stack 에 들어가지 않은)
+stack 에 넣고 start point pop
+2. recursion 으로.
+
+
+
+
+BFS : Queue
+
+start point : Queue 에넣고
+child node 있으면 (queue ㅇ ㅔ들어가지 않은)
+queue 에 넣고 dequeue
