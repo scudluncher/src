@@ -1,4 +1,3 @@
-package Programmers;
 
 public class Joystick {
  
