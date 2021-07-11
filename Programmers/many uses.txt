@@ -29,5 +29,64 @@ stack 에 넣고 start point pop
 BFS : Queue
 
 start point : Queue 에넣고
-child node 있으면 (queue ㅇ ㅔ들어가지 않은)
+child node 있으면 (queue 에들어가지 않은)
 queue 에 넣고 dequeue
+
+
+char[] char 배열 String 으로
+char[] answer=
+answer = String.valueOf( answerArray);
+
+
+String -> char array
+String numbers;
+char[] numChars = numbers.toCharArray();
+
+
+
+char ascii code 
+char aaa = 'a'
+int number = Character.getNumericValue(aaa);
+
+
+
+int[] --> Integer[]   int 기본형 -> Integer 
+Integer[] citationsInt =  Arrays.stream( citations )
+                                .boxed()
+                                .toArray( Integer[]::new );
+
+
+
+
+숫자 역순으로 정렬
+Integer[] citationInt 
+ Arrays.sort(citationsInt, Collections.reverseOrder()); // 6 5 3 1 0
+
+
+
+ Collections.reverse(recordList);
+
+ stack 선언
+  Stack<Integer> arrStack = new Stack<Integer>();
+
+
+
+  -----comparator
+
+          Comparator<Employee> salesComparator = new Comparator<Employee>() {
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                return o2.getSales().intValue() - o1.getSales().intValue();
+            }
+        };
+
+
+-----Comparable
+--> @override compareTo
+ @Override
+    public int compareTo(Employee o) {
+        return this.name.compareTo(o.name);
+        //return this.id - o.id;
+        //return this.department.compareTo(o.department);
+    }
+
