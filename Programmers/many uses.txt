@@ -38,9 +38,16 @@ char[] answer=
 answer = String.valueOf( answerArray);
 
 
+
+========String ============== start
 String -> char array
 String numbers;
 char[] numChars = numbers.toCharArray();
+
+
+
+String --> List<Character> 변환
+ List<Character> charList = s.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
 
 
 
@@ -49,8 +56,13 @@ char aaa = 'a'
 int number = Character.getNumericValue(aaa);
 
 
+String[] sliced = testMessage.split(" "); 띄어쓰기 나누기
+========String ============= end
 
+
+========숫자, int, Integer ============= start
 int[] --> Integer[]   int 기본형 -> Integer 
+
 Integer[] citationsInt =  Arrays.stream( citations )
                                 .boxed()
                                 .toArray( Integer[]::new );
@@ -63,11 +75,46 @@ Integer[] citationInt
  Arrays.sort(citationsInt, Collections.reverseOrder()); // 6 5 3 1 0
 
 
+절대값 Math.abs(-1 ) = 1 
 
- Collections.reverse(recordList);
+Integer stream 돌려서 최대값 찾기
+ int maxValue = waitingLine.stream().map(x->x.priority).max(Integer::compare).get();
 
+=========숫자, int, Integer =========== end 
+
+
+array 배열====================
+
+ 일부 카피 
+Arrays.copyOfRange(array, commands[i][0]-1, commands[i][1]);
+
+Arrays.sort(temp);   // 순서 정렬
+
+
+
+List ===================
+순서 거꾸로
+Collections.reverse(recordList);
+
+
+
+STACK========
  stack 선언
   Stack<Integer> arrStack = new Stack<Integer>();
+arrStack.push();  // stack 넣기 
+arrStack.pop();
+arrStack.peek()
+
+QUEUE======
+ queue 선언
+   Queue<Integer> intList = new LinkedList<Integer>();
+
+ queue 에 넣기
+ intList.offer(prices[i]);
+ intList.peek() ==> 맨앞에 있는 값 보기 (return X 빼지도 않음)
+ intList.poll() ==> 맨 앞에 있는 값 빼서 return 
+
+
 
 
 
